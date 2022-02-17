@@ -46,25 +46,47 @@ main {
 }
 
 .card,
-.card > img {
+.card > .overlay img {
   border-radius: 0.5em;
 }
 
-.card > img {
+.card > .overlay {
   width: 100%;
   height: auto;
   grid-area: image;
+  position: relative;
 }
 
-.card h1 {
+.overlay img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -0.2em;
+  left: 0;
+  background-color: hsla(178, 100%, 50%, 0.6);
+  border-radius: 0.5em;
+  cursor: pointer;
+  background-image: url("images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card > h1 {
   grid-area: header;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
-.card p {
+.card > p {
   grid-area: p;
   line-height: 1.5;
   margin-bottom: 0.5em;
+  font-weight: 300;
 }
 
 .card .ETH-num,
@@ -98,11 +120,6 @@ footer img {
   height: 2em;
   border: 2px solid hsla(0, 0%, 100%, 0.8);
   border-radius: 100%;
-}
-
-.card footer p {
-  margin-bottom: 0;
-  line-height: 1;
 }
 
 h1,

@@ -11,6 +11,7 @@ body {
   color: hsl(215, 51%, 70%);
   display: flex;
   flex-direction: column;
+  font-size: 18px;
 }
 
 .attribution {
@@ -40,7 +41,8 @@ main {
     "eth-num days-left"
     "footer footer";
   padding: 1.5em;
-  gap: 1.5em;
+  gap: 1em;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card,
@@ -56,18 +58,30 @@ main {
 
 .card h1 {
   grid-area: header;
+  font-size: 1.5em;
 }
 
 .card p {
   grid-area: p;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
 }
 
-.card .eth-num {
+.card .ETH-num,
+.card .days-left {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.card .ETH-num {
   grid-area: eth-num;
+  color: hsl(178, 100%, 50%);
 }
 
 .card .days-left {
   grid-area: days-left;
+  justify-self: end;
 }
 
 .card footer {
@@ -76,14 +90,28 @@ main {
   display: flex;
   align-items: center;
   gap: 1em;
+  padding: 1em 0 0;
+  border-top: 1px solid hsl(215, 32%, 27%);
 }
 
 footer img {
   height: 2em;
-  border: 2px solid hsla(0, 0%, 100%, 0.7);
+  border: 2px solid hsla(0, 0%, 100%, 0.8);
   border-radius: 100%;
 }
 
-footer p {
-  flex: 1;
+.card footer p {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+h1,
+span {
+  color: white;
+}
+
+h1:hover,
+span:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }

@@ -71,7 +71,7 @@ main {
 }
 ```
 
-Resizing in CSS grid.
+- Resizing in CSS grid.
 
 ```css
 .card {

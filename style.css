@@ -13,12 +13,6 @@ body {
   flex-direction: column;
 }
 
-/* body > footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-} */
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -36,10 +30,15 @@ main {
 
 .card {
   background-color: hsl(216, 50%, 16%);
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 350px;
-  min-width: 0;
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "image image"
+    "header header"
+    "p p"
+    "eth-num days-left"
+    "footer footer";
   padding: 1.5em;
   gap: 1.5em;
 }
@@ -50,4 +49,41 @@ main {
 }
 
 .card > img {
+  width: 100%;
+  height: auto;
+  grid-area: image;
+}
+
+.card h1 {
+  grid-area: header;
+}
+
+.card p {
+  grid-area: p;
+}
+
+.card .eth-num {
+  grid-area: eth-num;
+}
+
+.card .days-left {
+  grid-area: days-left;
+}
+
+.card footer {
+  grid-area: footer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+footer img {
+  height: 2em;
+  border: 2px solid hsla(0, 0%, 100%, 0.7);
+  border-radius: 100%;
+}
+
+footer p {
+  flex: 1;
 }

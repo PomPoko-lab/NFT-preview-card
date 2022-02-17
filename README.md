@@ -71,6 +71,29 @@ main {
 }
 ```
 
+Resizing in CSS grid.
+
+```css
+.card {
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "image image"
+    "header header"
+    "p p"
+    "eth-num days-left"
+    "footer footer";
+}
+
+.card > img {
+  width: 100%;
+  height: auto;
+  /* grid-column: 1 / -1; */
+  grid-area: image;
+}
+```
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
